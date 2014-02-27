@@ -2,11 +2,22 @@ package puzzle;
 
 public class Board {
 	public Piece[][] plateauTab;
-
+	
+	public Board(int sideLength) {
+		this.plateauTab = new Piece[sideLength][sideLength];
+	}
+	
 	public Board(Piece[][] plateauTab) {
-		super();
 		this.plateauTab = plateauTab;
 	}
+	
+	public void setPiece(int i, int j, int n, Piece piece, Pool piscine) {
+		this.plateauTab[i][j]=piece;	
+		piscine.utiliseTab[n]=true;
+	}
+	
+	
+	
 	public boolean possible(Piece piece,int i, int j){
 		
 		if (i!=0){
@@ -24,12 +35,12 @@ public class Board {
 		
 	}
 	
-	public void afficheBoard(Piece piece){
+	public void afficheBoard(){
 	
 		for (int i=0;i<plateauTab.length; i++ ){
 	      System.out.print("+--------------");
 		}
-		System.out.print("+");
+		System.out.println("+");
 		
 		
 		for (int i=0;i<plateauTab.length; i++ ){
@@ -56,7 +67,9 @@ public class Board {
 		  System.out.print("+--------------");
 		}
 		System.out.print("+");
-	}}
+	}
+	
+}
 	
 
 

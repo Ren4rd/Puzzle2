@@ -66,10 +66,27 @@ public class Piece {
 	}
 	
 	public void affichage(){
-		System.out.println("+--------------+");
-		System.out.println("|    "+this.valTab[0]+"    |");
-		System.out.println("|  "+this.valTab[3]+" ["+this.etiquette+"] "+this.valTab[1]+"  |");
-		System.out.println("|    "+this.valTab[2]+"    |");
+		System.out.println("+------------+");
+		if (this.valTab[0]>=0) {
+			System.out.println("|      "+this.valTab[0]+"     |");
+		} else {
+			System.out.println("|     "+this.valTab[0]+"     |");
+		}
+		if (this.valTab[1]>=0 && this.valTab[3]>=0) {
+			System.out.println("|  "+this.valTab[3]+" ["+this.etiquette+"] "+this.valTab[1]+"   |");
+		} else {
+			if (this.valTab[1]>=0 || this.valTab[3]>=0) {
+				System.out.println("|  "+this.valTab[3]+" ["+this.etiquette+"] "+this.valTab[1]+"  |");
+			} else {
+				System.out.println("|  "+this.valTab[3]+" ["+this.etiquette+"] "+this.valTab[1]+" |");
+			}
+		}
 		
+		if (this.valTab[2]>=0) {
+			System.out.println("|      "+this.valTab[2]+"     |");
+		} else {
+			System.out.println("|     "+this.valTab[2]+"     |");
+		}
+		System.out.println("+------------+");
 	}
 }

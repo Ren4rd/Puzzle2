@@ -19,7 +19,7 @@ public class Pool {
 		Parser scan = new Parser();
 		this.pieceTab = scan.reader(nomDuFichier);
 		this.utiliseTab = new boolean[pieceTab.length];
-		Arrays.fill(utiliseTab, true);
+		Arrays.fill(utiliseTab, false);
 	}
 
 
@@ -31,5 +31,16 @@ public class Pool {
 	return(i==pieceTab.length);
 	}
 
-
+	public int getSizeBoard() {
+		int s = (int) Math.sqrt(pieceTab.length);
+		
+		return s;
+	}
+	
+	
+		
+		
+		
+		
+		
 }

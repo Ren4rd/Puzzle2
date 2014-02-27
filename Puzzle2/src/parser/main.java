@@ -1,7 +1,9 @@
 package parser;
 
+
 import java.io.FileNotFoundException;
 
+import puzzle.Board;
 import puzzle.NineSquarePuzzle;
 
 public class main {
@@ -10,11 +12,20 @@ public class main {
 	 Parser scan = new Parser();
 	 try {
 		scan.reader("data1.txt");
+		NineSquarePuzzle nSP = new NineSquarePuzzle("data1.txt"); {
+			nSP.pool.pieceTab[0].affichage();
+		}
+		
+		Board[] SO =nSP.megaSolverPuzzle(); {
+			SO[0].afficheBoard();
+			SO[0].plateauTab[0][0].affichage();
+		}
+		
 	} catch (FileNotFoundException e) {
 		
 		e.printStackTrace();
 	}
 	}
 	
-	NineSquarePuzzle nSP = new NineSquarePuzzle("data2.txt");
+	
 }
