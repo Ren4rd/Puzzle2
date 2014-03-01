@@ -22,7 +22,9 @@ public class Pool {
 		Arrays.fill(utiliseTab, false);
 	}
 
-
+	public void pieceDisponible(int n) {	
+		this.utiliseTab[n]=false;
+	}
 
 	public boolean toutParfait(){
 	while (pieceTab[i].parfait() && i< pieceTab.length){

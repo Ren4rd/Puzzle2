@@ -12,13 +12,14 @@ public class main {
 	 Parser scan = new Parser();
 	 try {
 		scan.reader("data1.txt");
-		NineSquarePuzzle nSP = new NineSquarePuzzle("data1.txt"); {
+		NineSquarePuzzle nSP = new NineSquarePuzzle("data7.txt"); {
 			nSP.pool.pieceTab[0].affichage();
 		}
 		
 		Board[] SO =nSP.megaSolverPuzzle(); {
-			SO[0].afficheBoard();
+			
 			SO[0].plateauTab[0][0].affichage();
+			
 		}
 		
 	} catch (FileNotFoundException e) {

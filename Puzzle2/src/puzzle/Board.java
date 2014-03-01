@@ -16,6 +16,11 @@ public class Board {
 		piscine.utiliseTab[n]=true;
 	}
 	
+	public void dropPiece(int i, int j, int n, Pool piscine) {	
+		this.plateauTab[i][j]=null;
+		piscine.utiliseTab[n]=false;
+	}
+	
 	
 	
 	public boolean possible(Piece piece,int i, int j){
@@ -46,27 +51,28 @@ public class Board {
 		for (int i=0;i<plateauTab.length; i++ ){
 			
 		    for (int j=0;j<plateauTab.length; j++){
-			System.out.print("|    "+plateauTab[i][j].getValTab()[0]+"    ");
+			System.out.print("|      "+plateauTab[i][j].getValTab()[0]+"       ");
 			}
-			System.out.print("|");
+			System.out.print("|\n");
 			
 			for (int j=0;j<plateauTab.length; j++){
-			System.out.println("|  "+this.plateauTab[i][j].getValTab()[3]+" ["+this.plateauTab[i][j].getEtiquette()+this.plateauTab[i][j].getIndiceRota()+"] "+this.plateauTab[i][j].getValTab()[1]+"  ");
+			System.out.print("|  "+this.plateauTab[i][j].getValTab()[3]+" ["+this.plateauTab[i][j].getEtiquette()+this.plateauTab[i][j].getIndiceRota()+"] "+this.plateauTab[i][j].getValTab()[1]+"  ");
 		    }
-			System.out.print("|");
+			System.out.print("|\n");
 			
 			for (int j=0;j<plateauTab.length; j++){
-				System.out.print("|    "+plateauTab[i][j].getValTab()[2]+"    ");
+				System.out.print("|      "+plateauTab[i][j].getValTab()[2]+"       ");
 			}
-			System.out.print("|");
+			System.out.print("|\n");
 			
-		}	
-		
-			
-		for (int i=0;i<plateauTab.length; i++ ){
+			for (int j=0;j<plateauTab.length; j++ ){
 		  System.out.print("+--------------");
+		}	
+			System.out.print("+\n");
+			
+		
 		}
-		System.out.print("+");
+		
 	}
 	
 }
